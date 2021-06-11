@@ -7,7 +7,65 @@
   <title>Overlook Hotel</title>
 </head>
 <body>
-  
+  <nav>
+    <div class="overlook">
+      <h1>Overlook Hotel</h1>
+    </div>
+    <section class="user-infro hidden" id="userInfo">
+      <h2 class="Welcome">Welcome</h2>
+      <p class="user-name" id="userName">Name</p>
+      <p class="total-amount" id="totalAmount">Total</p>
+    </section>
+    <section class="search-container hidden" id="searchContainer">
+      <form class="search-form">
+        <h2 class="book-now title" id"bookNow">Book Now</h2>
+        <div class="search-div">
+          <label for="book-date">Date:</label>
+          <input type="date" class="book-date" id="bookDate" name="trip-start"          value="2021-05-22" min="2021-01-01"
+          max="2021-12-21">
+        </div>
+        <p class="error-msg" id"errorMsg">Date Required</p>
+        <div class="search-form">
+          <label class="drop-down" id"dropDown">Room</label>
+          <select class="room-selection" id="roomSelection" name="roomselect">
+            <option value="all rooms">All Rooms</option>
+            <option value="single rooms">Single Room</option>
+            <option value="junior suite">Junior Suite</option>
+            <option value="suite">Suite</option>
+            <option value="residential suite">Residential Suite</option>
+          </select>
+        </div>
+        <div class="search-btn-div">
+          <button class="search-btn" id="serchBtn" type="button" name="button">Search</button>
+        </div>
+      </form>
+    </section>
+  </nav>
+  <main class="main-section">
+
+  </main>
+    <!-- <form class="login-form" id="loginForm">
+     <div class="login-container">
+       <label class="username login-label" for="usernameInput">Username: </label>
+       <input class="email-input login-input" id="usernameInput" type="text" placeholder="user123">
+     </div>
+     <div class="login-container">
+       <label class="password-label login-label" for="passwordInput" >Password: </label>
+       <input class="password-input login-input" id="passwordInput" type="password" placeholder="Password">
+     </div>
+     <button class="login-button" id="loginButton">Log In</button>
+     <p class="login-error-message error-label hidden" id="loginError">Incorrect </p>
+   </form> -->
+   <section class="room-container" id"roomContainer">
+     <div class="room-grid">
+       
+
+     </div>
+
+   </section>
+
+
+
   <!-- <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px"> -->
 
 

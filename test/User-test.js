@@ -5,10 +5,11 @@ import Bookings from '../src/Bookings';
 import {customerData, bookingsData} from './test-data';
 
 describe('User', () => {
-  let user1;
+  let user1, user2;
 
   beforeEach(() => {
     user1 = new User(customerData[0])
+    user2 = new User(customerData[1])
   });
 
   it('Should be a function', () => {
@@ -21,10 +22,17 @@ describe('User', () => {
 
   it('Should have an id', () => {
     expect(user1.id).to.equal(1);
+    expect(user2.id).to.equal(2);
   });
 
   it('Should have a name', () => {
     expect(user1.name).to.equal('Eva Navarrete');
+    expect(user2.name).to.equal('Lindsay Parker')
+  });
+
+  it('Should start with no booking', () => {
+    expect(user1.userBookings).to.deep.equal([]);
+    expect(user2.userBookings).to.deep.equal([]);
   })
 
 
