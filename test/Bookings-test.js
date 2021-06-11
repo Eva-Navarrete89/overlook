@@ -4,3 +4,50 @@ import User from '../src/User';
 import Bookings from '../src/Bookings';
 import Rooms from '../src/Rooms';
 import {customerData, bookingsData, roomData} from './test-data';
+
+describe('Booking', () => {
+  let booking1, booking2
+
+  beforeEach(() => {
+    booking1 = new Bookings(bookingsData[0]);
+    booking2 = new Bookings(bookingsData[1]);
+    console.log('book1', booking1);
+    console.log('book2', booking2);
+  });
+
+  it('Should be a function', () => {
+    expect(Bookings).to.be.a('function');
+  });
+
+  it('Should be an instance of booking', () => {
+    expect(booking1).to.be.an.instanceof(Bookings);
+  });
+
+  it('should have an id', () => {
+    expect(booking1.id).to.equal('5fwrgu4i7k55hl6sz');
+    expect(booking2.id).to.equal('5fwrgu4i7k55hl6t5');
+  });
+
+  it('Should have a users id', () => {
+    expect(booking1.userID).to.equal(9);
+    expect(booking2.userID).to.equal(43);
+  });
+
+  it('Should have a date', () => {
+    expect(booking1.date).to.equal('2020/04/22');
+    expect(booking2.date).to.equal('2020/01/24');
+  });
+
+  it('Should have a room number', () => {
+    expect(booking1.roomNumber).to.equal(15);
+    expect(booking2.roomNumber).to.equal(24);
+  });
+
+  it('Should store room service charges', () => {
+    expect(booking1.roomServiceCharges).to.be.an('array');
+    expect(booking1.roomServiceCharges.length).to.equal(0);
+    expect(booking2.roomServiceCharges).to.be.an('array');
+    expect(booking2.roomServiceCharges.length).to.equal(0);
+  })
+
+});
