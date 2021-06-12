@@ -6,9 +6,13 @@ class Rooms {
     this.bedSize = room.bedSize;
     this.numBeds = room.numBeds;
     this.costPerNight = room.costPerNight;
+    this.isAvailable = room.isAvailable;
   };
 
+checkRoomAvailability() {
   
+}
+
 };
 
 

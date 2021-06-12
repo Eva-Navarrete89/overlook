@@ -55,4 +55,9 @@ describe('Rooms', () => {
       expect(room2.costPerNight).to.equal(477.38);
     });
 
+    it('Should check room availablity', () => {
+      expect(room1.isAvailable).to.equal();
+      expect(room2.isAvailable).to.equal();
+    });
+
 });

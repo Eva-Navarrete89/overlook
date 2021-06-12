@@ -3,14 +3,19 @@ const expect = chai.expect;
 import User from '../src/User';
 import Bookings from '../src/Bookings';
 import Rooms from '../src/Rooms';
-import {customerData, bookingsData, roomsData} from './test-data';
+import {customerData, bookingsData, roomData} from './test-data';
 
 describe('User', () => {
   let user1, user2;
+  let room;
+  let booking;
 
   beforeEach(() => {
     user1 = new User(customerData[0])
     user2 = new User(customerData[1])
+    // room = new Rooms(roomsData);
+    // booking = new Bookings(bookingsData);
+    // console.log(room);
   });
 
   it('Should be a function', () => {
@@ -42,13 +47,18 @@ describe('User', () => {
 
   it('Should display any bookings user has done', () => {
     user1.retrieveRoomBookings(bookingsData);
-    expect(user1.userBookings).to.deep.equal([])
+    expect(user1.userBookings.length).to.deep.equal(1)
   });
 
   it('Should Calculate all of user room cost', () => {
-    user1.calculateRoomCost();
-    expect(user1.bookingCost).to.equal(0);
-  })
+    booking = new Bookings(bookingsData[4]);
+    // room = new Rooms(roomData);
+    // console.log('hello',roomData)
+    // console.log(booking);
+    user1.userBookings.push(booking);
+    user1.calculateRoomCost(roomData);
+    expect(user1.bookingCost).to.equal(172.09);
+  });
 
 
 
