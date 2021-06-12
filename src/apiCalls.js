@@ -20,10 +20,6 @@ export const fetchCalls = {
     .then(data => data.bookings)
     .catch(err => displayErr(err))
   },
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 459b2eca4703e1be1cccf2abb84299cd5bfcd419
 
 }

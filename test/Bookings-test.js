@@ -11,8 +11,6 @@ describe('Booking', () => {
   beforeEach(() => {
     booking1 = new Bookings(bookingsData[0]);
     booking2 = new Bookings(bookingsData[1]);
-    console.log('book1', booking1);
-    console.log('book2', booking2);
   });
 
   it('Should be a function', () => {
