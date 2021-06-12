@@ -3,7 +3,11 @@ const expect = chai.expect;
 import User from '../src/User';
 import Bookings from '../src/Bookings';
 import Rooms from '../src/Rooms';
-import {customerData, bookingsData, roomData} from './test-data';
+import {
+  customerData,
+  bookingsData,
+  roomData
+} from './test-data';
 
 describe('User', () => {
   let user1, user2;
@@ -52,9 +56,6 @@ describe('User', () => {
 
   it('Should Calculate all of user room cost', () => {
     booking = new Bookings(bookingsData[4]);
-    // room = new Rooms(roomData);
-    // console.log('hello',roomData)
-    // console.log(booking);
     user1.userBookings.push(booking);
     user1.calculateRoomCost(roomData);
     expect(user1.bookingCost).to.equal(172.09);
