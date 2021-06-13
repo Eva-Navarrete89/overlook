@@ -12,14 +12,11 @@ import {
 describe('User', () => {
   let user1, user2;
   let room;
-  let booking;
+  let booking, booking2;
 
   beforeEach(() => {
     user1 = new User(customerData[0])
     user2 = new User(customerData[1])
-    // room = new Rooms(roomsData);
-    // booking = new Bookings(bookingsData);
-    // console.log(room);
   });
 
   it('Should be a function', () => {

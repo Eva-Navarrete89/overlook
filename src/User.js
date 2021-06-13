@@ -10,9 +10,9 @@ class User {
 
   retrieveRoomBookings(bookingData) {
 
-    bookingData.filter(id => {
-      if (this.id === id.userID) {
-        this.userBookings.push(id)
+    bookingData.filter(booking => {
+      if (this.id === booking.userID) {
+        this.userBookings.push(booking);
       }
     });
     // console.log(this.userBookings)
@@ -22,16 +22,17 @@ class User {
 
   calculateRoomCost(roomData) {
     this.userBookings.forEach(bookingInput => {
-
+      // console.log('booking input',bookingInput);
       roomData.filter(room => {
         if (room.number === bookingInput.roomNumber) {
           bookingInput.totalCost = room.costPerNight;
+          // console.log(bookingInput);
         };
       });
     });
 
-    let roomTotal = this.userBookings.reduce((acc, roomPrice) => {
-      return acc += roomPrice.totalCost;
+    let roomTotal = this.userBookings.reduce((acc, bookingPrice) => {
+      return acc += bookingPrice.totalCost;
     }, 0);
 
     return this.bookingCost = roomTotal;
