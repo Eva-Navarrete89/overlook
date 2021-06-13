@@ -11,17 +11,13 @@ import {
 } from './test-data';
 
 describe('Hotel', () => {
-  let user;
-  let room;
-  let booking;
+  let user1, user2
   let hotel;
 
   beforeEach(() => {
-    user = new User(customerData[0]);
-    room = new Rooms(roomData[0]);
-    booking = new Bookings(bookingsData);
-    hotel = new Hotel(user, room, booking);
-    console.log(user);
+    user1 = new User(customerData[0]);
+    user2 = new User(customerData[1]);
+    hotel = new Hotel(roomData, bookingsData);
   });
 
   it('should be a function', () => {
@@ -32,9 +28,22 @@ describe('Hotel', () => {
     expect(hotel).to.be.an.instanceof(Hotel);
   });
 
+  it('Should hold all room data', () => {
+    expect(hotel.allRooms).to.equal(roomData);
+  });
+
+  it('Should hold all booking data', () => {
+    expect(hotel.allBookings).to.equal(bookingsData);
+  });
+
+  it('Should check all room availablity by type', () => {
+
+  });
+
   // Methods I might need!!
 
 // checkRoomAvailability
+// checkRoomAvailabilityByDate
 
 
 });

@@ -1,8 +1,19 @@
 class Hotel {
-  constructor(user, room, booking) {
-    // this.allBookings =
+  constructor(roomData, bookingsData) {
+    this.allBookings = bookingsData;
+    this.allRooms = roomData;
+    this.roomsAvailable = [];
+    // console.log(this.allBookings);
+  }
+
+  checkRoomAvailabilityByType() {
 
   }
+
+  checkRoomAvailabilityByDate(date) {
+
+  }
+
 }
 
 
