@@ -36,8 +36,13 @@ describe('Hotel', () => {
     expect(hotel.allBookings).to.equal(bookingsData);
   });
 
-  it('Should check all room availablity by type', () => {
+  it('Should have start with empty room available array', () => {
+    expect(hotel.roomsAvailable).to.deep.equal([]);
+  })
 
+  it('Should check all room availablity by type', () => {
+    hotel.checkRoomAvailabilityByType();
+    expect()
   });
 
   // Methods I might need!!
