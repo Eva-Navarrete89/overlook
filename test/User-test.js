@@ -1,8 +1,8 @@
 import chai from 'chai';
 const expect = chai.expect;
 import User from '../src/User';
-import Bookings from '../src/Bookings';
-import Rooms from '../src/Rooms';
+import Booking from '../src/Bookings';
+import Room from '../src/Rooms';
 import {
   customerData,
   bookingsData,
@@ -43,19 +43,47 @@ describe('User', () => {
   });
 
   it('should dafault to 0 booking cost', () => {
-    expect(user1.bookingCost).to.equal(0);
+    expect(user1.totalBookingCost).to.equal(0);
   });
 
   it('Should display any bookings user has done', () => {
     user1.retrieveRoomBookings(bookingsData);
-    expect(user1.userBookings.length).to.deep.equal(1)
+    expect(user1.userBookings).to.deep.equal([{
+        id: '5fwrgu4i7k55hl6sz',
+        userID: 1,
+        date: '2020/04/22',
+        roomNumber: 6,
+        roomServiceCharges: []
+      },
+      {
+        id: '5fwrgu4i7k55hl6t5',
+        userID: 1,
+        date: '2020/01/24',
+        roomNumber: 5,
+        roomServiceCharges: []
+      },
+      {
+        id: '5fwrgu4i7k55hl6t8',
+        userID: 1,
+        date: '2020/02/05',
+        roomNumber: 1,
+        roomServiceCharges: []
+      },
+      {
+        id: '5fwrgu4i7k55hl6tc',
+        userID: 1,
+        date: '2020/01/30',
+        roomNumber: 3,
+        roomServiceCharges: []
+      }
+    ]);
   });
 
   it('Should Calculate all of user room cost', () => {
-    booking = new Bookings(bookingsData[4]);
+    booking = new Booking(bookingsData[1]);
     user1.userBookings.push(booking);
     user1.calculateRoomCost(roomData);
-    expect(user1.bookingCost).to.equal(172.09);
+    expect(user1.totalBookingCost).to.equal(340.17);
   });
 
 

@@ -1,4 +1,4 @@
-class Bookings {
+class Booking {
   constructor(booking) {
     this.id = booking.id;
     this.userID = booking.userID;
@@ -16,4 +16,4 @@ class Bookings {
 
 
 
-export default Bookings;
+export default Booking;

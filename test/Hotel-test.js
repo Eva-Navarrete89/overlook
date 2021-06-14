@@ -1,8 +1,8 @@
 import chai from 'chai';
 const expect = chai.expect;
 import User from '../src/User';
-import Bookings from '../src/Bookings';
-import Rooms from '../src/Rooms';
+import Booking from '../src/Bookings';
+import Room from '../src/Rooms';
 import Hotel from '../src/Hotel';
 import {
   customerData,
@@ -29,20 +29,26 @@ describe('Hotel', () => {
   });
 
   it('Should hold all room data', () => {
-    expect(hotel.allRooms).to.equal(roomData);
+    expect(hotel.rooms).to.equal(roomData);
   });
 
   it('Should hold all booking data', () => {
-    expect(hotel.allBookings).to.equal(bookingsData);
+    expect(hotel.bookings).to.equal(bookingsData);
   });
 
   it('Should have start with empty room available array', () => {
     expect(hotel.roomsAvailable).to.deep.equal([]);
   })
 
+  it('Should check all room availablity by date', () => {
+    let availableByDate = hotel.checkRoomAvailabilityByDate("2020/01/11");
+    console.log("availableByDate", availableByDate)
+    expect(availableByDate).to.deep.equal([])
+  });
+
   it('Should check all room availablity by type', () => {
     hotel.checkRoomAvailabilityByType();
-    expect()
+    expect(this)
   });
 
   // Methods I might need!!

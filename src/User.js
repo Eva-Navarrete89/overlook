@@ -3,27 +3,27 @@ class User {
     this.id = user.id;
     this.name = user.name;
     this.userBookings = [];
-    this.bookingCost = 0;
+    this.totalBookingCost = 0;
 
   }
   // Methods I think I'll need
 
   retrieveRoomBookings(bookingData) {
 
-    bookingData.filter(booking => {
+     const filteredBookings = bookingData.filter(booking => {
       if (this.id === booking.userID) {
         this.userBookings.push(booking);
       }
     });
     // console.log(this.userBookings)
-    return this.userBookings;
+    return filteredBookings;
 
   }
 
   calculateRoomCost(roomData) {
     this.userBookings.forEach(bookingInput => {
       // console.log('booking input',bookingInput);
-      roomData.filter(room => {
+      roomData.find(room => {
         if (room.number === bookingInput.roomNumber) {
           bookingInput.totalCost = room.costPerNight;
           // console.log(bookingInput);
@@ -35,7 +35,7 @@ class User {
       return acc += bookingPrice.totalCost;
     }, 0);
 
-    return this.bookingCost = roomTotal;
+    return this.totalBookingCost = roomTotal;
     // return Math.round(roomTotal).toFixed(2);
   }
 
