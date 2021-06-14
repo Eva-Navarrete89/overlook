@@ -1,8 +1,14 @@
-class Bookings {
-  constructor(bookings) {
-    this.allBookings = bookings;
-  }
-}
+class Booking {
+  constructor(booking) {
+    this.id = booking.id;
+    this.userID = booking.userID;
+    this.date = booking.date;
+    this.roomNumber = booking.roomNumber;
+    this.roomServiceCharges = [];
+  };
+
+
+};
 
 
 
@@ -10,4 +16,4 @@ class Bookings {
 
 
 
-export default Bookings;
+export default Booking;
